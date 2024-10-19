@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-gap: 20px; /* Adds spacing between the cards */
+    max-width: 1200px; /* Limits the width of the container */
+    margin: 0 auto; /* Centers the container */
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Ensures all cards have the same height */
+.card {
+    min-height: 350px; /* Adjust based on content */
+}
+
+/* Profile section styling */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+h2 {
+    font-size: 1.4em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #666;
+}
+
+/* Card-specific styles */
+.card-purple {
+    background-color: hsl(263, 55%, 52%); /* Moderate violet */
+    grid-column: span 2;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+
+    /* Add SVG image as background */
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: auto;
+    background-position: top right 80px;
+}
+
+
+.card-purple h2, 
+.card-purple .description {
+    color: white;
+}
+
+.card-dark {
+    background-color: #2b3945;
+    color: white;
+    grid-column: span 1; /* Card-Dark spans 1 column */
+}
+
+.card-dark h2, 
+.card-dark .description {
+    color: white;
+}
+
+.card-light {
+    background-color: #f9f9f9;
+    grid-column: span 1; /* Card-Light spans 1 column in the first row */
+    grid-row: span 2; /* Card-Light spans 2 rows (vertically) */
+}
+
+.card-light h2, 
+.card-light .description {
+    color: #222;
+}
+
+.card-white {
+    background-color: #fff;
+    grid-column: span 1; /* Card-White spans 1 column */
+}
+
+.card-black {
+    background-color: #1d1d1d;
+    color: white;
+    grid-column: span 2; /* Card-Black spans 2 columns */
+}
+
+.card-black h2, 
+.card-black .description {
+    color: white;
+}
+
+/* Mobile layout (375px width and below) */
+@media (max-width: 375px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack the cards vertically */
+        gap: 20px; /* Space between the cards */
+    }
+
+    .card {
+        width: 100%; /* Makea each card take the full width */
+    }
+
+    /* I used this to adjust text sizes or other styles for mobile */
+    h2 {
+        font-size: 1.1rem; /* Adjust the heading size for mobile */
+    }
+
+    p.description {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+}
